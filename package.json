@@ -1,0 +1,25 @@
+{
+  "name": "kingpai_servers_node_public",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "html5shiv": "^3.7.3",
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a726839644/kingpai_servers_node_public.git"
+  },
+  "author": "kingpai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a726839644/kingpai_servers_node_public/issues"
+  },
+  "homepage": "https://github.com/a726839644/kingpai_servers_node_public#readme"
+}

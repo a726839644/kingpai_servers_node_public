@@ -1,0 +1,20 @@
+{
+  "name": "kingpai_servers_node_public",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "kingpai"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/a726839644/kingpai_servers_node_public",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "rotate-image-jQuery": "https://github.com/a726839644/rotate-image-jQuery.git"
+  }
+}
