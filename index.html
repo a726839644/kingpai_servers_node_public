@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <title>KINGPAI resume</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="my_plugins/vertical_carousal/css/vertical_carousal.css">
     <link rel="stylesheet" href="my_plugins/rotate-image-jQuery/css/rotate-img.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.min.css"/>
-
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
 </head>
 <body>
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
     <div class="container-fluid">
-        <a href="#" class="navbar-brand">KINGPAI</a>
+        <a href="/" class="navbar-brand">KINGPAI</a>
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                 <span class="sr-only">切换导航</span>
@@ -25,71 +24,97 @@
         <div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="current"><a href="#0">个人信息</a></li>
-                    <li><a href="#1">能力展示</a></li>
-                    <li class="dropdown">
-                        <a href="#2" class="dropdown-toggle" data-toggle="dropdown">作品展示<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">翻牌游戏</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#3">联系方式</a></li>
+                    <li class="active"><a href="#myVerticalCarousel" data-slide-to="0">个人信息</a></li>
+                    <li><a href="#myVerticalCarousel" data-slide-to="1">能力展示</a></li>
+                    <li><a href="#myVerticalCarousel" data-slide-to="2">作品展示</a></li>
+                    <li><a href="#myVerticalCarousel" data-slide-to="3">联系方式</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-<div id="0" class="pager">
-    <div class="container">
-        <div class="row skill-bubble">
-            <a>HTML5</a>
-            <a>CSS3</a>
-            <a>JavaScript</a>
-            <a>C</a>
-            <a>C#</a>
-            <a>Java</a>
-            <a>jQuery</a>
-            <a>Bootstrap</a>
-            <a>nodejs</a>
-            <a>WebStorm</a>
-            <a>Sublime Text 3</a>
-            <a>npm</a>
+<div id="myVerticalCarousel" class="container vertical-carousel slide" data-item-height="850" data-rests-indicators="#navbar-collapse li">
+    <ol class="vertical-carousel-indicators">
+        <li data-target="#myVerticalCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myVerticalCarousel" data-slide-to="1"></li>
+        <li data-target="#myVerticalCarousel" data-slide-to="2"></li>
+        <li data-target="#myVerticalCarousel" data-slide-to="3"></li>
+    </ol>
+    <div class="vertical-carousel-box">
+        <div id="0" class="item pager active">
+            <div class="row skill-bubble">
+                <a>HTML5</a>
+                <a>CSS3</a>
+                <a>JavaScript</a>
+                <a>C/C++</a>
+                <a>C#</a>
+                <a>Java</a>
+                <a>jQuery</a>
+                <a>Bootstrap</a>
+                <a>nodejs</a>
+                <a>WebStorm</a>
+                <a>Sublime Text 3</a>
+                <a>npm</a>
+            </div>
+            <div class="row self-description ">
+                <p>本人精通HTML5、JavaScript、CSS3、C/C++、C#、</p>
+                <p>java、jQuery、Bootstrap、nodejs，熟练使用npm、WebStorm、Sublime Text 3</p>
+                <p>拥有优秀的逻辑思维能力，超强的自学能力，对前端技术有着浓厚的兴趣，渴望新知识，希望在实践中不断成长</p>
+            </div>
+            <!--<div class="row code_address portrait-hide">-->
+                <!--<div class="col col-sm-push-3 col-sm-3 col-xs-6">-->
+                    <!--<a class="link-block" href="https://github.com/a726839644/kingpai_servers_node.git">服务器源码</a>-->
+                <!--</div>-->
+                <!--<div class="col col-sm-push-3 col-sm-3 col-xs-6">-->
+                    <!--<a class="link-block" href="https://github.com/a726839644/kingpai_servers_node_public.git">主页源码</a>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
-        <div class="row self-description ">
-            <p>精通HTML5、JavaScript、CSS3等前端开发语言，对C、C#、java也有所涉猎，熟悉jQuery库、Bootstrap框架</p>
-            <p>了解浏览器调试工具，熟悉nodejs后端开发语言，会使用npm包管理工具，熟练使用WebStorm、Sublime Text 3等编程工具</p>
-            <p>规范的代码编写习惯，熟练使用div+css布局，能利用JS完成各类页面效果及跨域交互</p>
-            <p>拥有优秀的逻辑思维能力，对前端技术有着浓厚的兴趣，渴望新知识，希望在实践中不断成长</p>
-        </div>
-    </div>
-</div>
-<div id="1" class="pager">
-    <div class="container">
-        <div class="col col-md-8 col-md-push-2 plugin-example">
-            <h2 class="plugin-title">jQuery图片旋转插件</h2>
-            <div class="rotate-plugin">
-                <div class="rotate-img-box">
-                    <div class="rotate-img-uploader">
-                        <label for="rotate-img-upload" class="btn btn-default">选择</label>
-                        <input type="file" id="rotate-img-upload" accept="image/*" class="rotate-img-upload">
-                    </div>
-                    <div class="rotate-img-controller btn btn-default">旋转</div>
-                    <div class="rotate-img-main">
-                        <span></span><img src="images/1.jpg"/>
-                    </div>
+        <div id="1" class="item pager">
+            <div class="row">
+                <div class="col col-md-4 col-md-push-0 col-xs-5 col-xs-push-1 project-box">
+                    <a href="#" id="rotate-pl1ug1in">
+                        <img src="images/rotate-image-jQuery.jpg">
+                    </a>
+                    <p class="project-title">jQuery旋转插件</p>
+                </div>
+                <div class="col col-md-4 col-md-push-0 col-xs-5 col-xs-push-1 project-box">
+                    <a href="#" id="rotate-pl1ug11in">
+                        <img src="images/rotate-image-jQuery.jpg">
+                    </a>
+                    <p class="project-title">jQuery旋转插件</p>
                 </div>
             </div>
-            <div class="row plugin-description portrait-hide">
-                <p>可选择任意本地图片</p>
-                <p>图片自适应大小，功能类似Windows图片查看器</p>
+        </div>
+        <div id="2" class="item pager">
+            <div class="row">
+                <div class="col col-md-4 col-md-push-0 col-xs-5 col-xs-push-1 project-box">
+                    <a href="/zjgs_autofs" id="rotate-plugin">
+                        <img src="images/zjgs_autofs.jpg">
+                    </a>
+                    <p class="project-title">浙江国税自动填报报表</p>
+                </div>
+                <div class="col col-md-4 col-md-push-0 col-xs-5 col-xs-push-1 project-box">
+                    <a href="#" id="rotate-plug1in">
+                        <img src="images/rotate-image-jQuery.jpg">
+                    </a>
+                    <p class="project-title">jQuery旋转插件</p>
+                </div>
+                <div class="col col-md-4 col-md-push-0 col-xs-5 col-xs-push-1 project-box">
+                    <a href="#" id="rotate-plug11in">
+                        <img src="images/rotate-image-jQuery.jpg">
+                    </a>
+                    <p class="project-title">jQuery旋转插件</p>
+                </div>
             </div>
         </div>
+        <div id="3" class="item pager"></div>
     </div>
 </div>
-<div id="2" class="pager"></div>
-<div id="3" class="pager"></div>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="my_plugins/vertical_carousal/js/vertical_carousal.js"></script>
 <script src="my_plugins/rotate-image-jQuery/js/rotate-img.min.js"></script>
-<script src="js/index.min.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

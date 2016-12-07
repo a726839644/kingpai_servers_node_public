@@ -1,11 +1,11 @@
 {
   "name": "rotate-image-jQuery",
   "homepage": "https://github.com/a726839644/rotate-image-jQuery",
-  "_release": "799d004b0a",
+  "_release": "87516904da",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "799d004b0a1cbc5244f0b41ee8afad1e6314cf11"
+    "commit": "87516904da9cdee92b541090c5a7bf955ce698f2"
   },
   "_source": "https://github.com/a726839644/rotate-image-jQuery.git",
   "_target": "*",
