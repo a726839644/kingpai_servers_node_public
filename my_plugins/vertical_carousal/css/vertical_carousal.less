@@ -11,6 +11,17 @@
 .vertical-carousel{
   display: block;
   position: relative;
+  overflow: hidden;
+}
+.vertical-carousel-box{
+  &,.item{
+    height:100%;
+    width:100%;
+    margin:0;
+  }
+  .item{
+    overflow: hidden;
+  }
 }
 .vertical-carousel-indicators {
   z-index: 1000;
@@ -19,7 +30,7 @@
   right: 30px;
   text-align: center;
   padding: 0;
-  margin: 0;
+  margin: -50px 0 0 0;
   li {
     display: block;
     z-index: 1001;
@@ -28,7 +39,6 @@
     margin: 10px;
     cursor: pointer;
     border:2px solid #ffffff;
-    background: #000;
     &:hover,&.active {
       background: #ffffff;
     }

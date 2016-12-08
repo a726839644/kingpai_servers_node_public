@@ -7,17 +7,13 @@ $(window).ready(function () {
     var $body = $("body");
     var $vertical = $(".vertical-carousel");
     var $verticalBox = $vertical.find(".vertical-carousel-box");
-    var $pager = $(".pager");
 
     //自适应页的高度为浏览器可见高度
     +function setPageHeight() {
-        var $style = $("<style>");
-        $("head").append($style);
 
         function setHeight() {
             windowHeight = $(window).height();
-            $style.html(".pager{height:" + windowHeight + "px}");
-            $verticalBox.css({
+            $verticalBox.css({//修正位置
                 transform: "translateY(-" + windowHeight * parseInt($verticalBox.find(".active").prop("id")) + "px)"
             });
             $vertical.attr("data-item-height", windowHeight);
@@ -27,16 +23,6 @@ $(window).ready(function () {
 
         $(window).on("resize", setHeight);
     }();
-
-    //link-block动画错开
-    // +function linkBlockInterlace() {
-    //     var $linkBlock = $(".link-block");
-    //     $linkBlock.each(function (i, e) {
-    //         setTimeout(function () {
-    //             $(e).addClass("link-block-animating");
-    //         }, 500 * i);
-    //     })
-    // }();
 
     //冒出效果
     +function bubbleAnimate($elts) {
@@ -78,7 +64,7 @@ $(window).ready(function () {
                     top: randoms[0].top * 95 + "%",
                     transform: "scale(1)",
                     opacity: 0,
-                    zIndex: -1000,
+                    zIndex: -2000,
                     marginTop: 1,
                     color: "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")"
                 });
@@ -89,18 +75,18 @@ $(window).ready(function () {
             eltCSSInit();
 
             $elt.animate({
-                zIndex: 0,
+                zIndex: -1000,
                 opacity: 1,
-                marginTop: 2
+                marginTop: 1.5
             }, {
                 duration: duration,
                 step: animateStep,
                 easing: "linear",
                 queue: true
             }).animate({
-                zIndex: 1000,
+                zIndex: 0,
                 opacity: 0,
-                marginTop: 3
+                marginTop: 2.5
             }, {
                 duration: duration,
                 step: animateStep,
@@ -123,4 +109,12 @@ $(window).ready(function () {
             }
         )
     }($(".skill-bubble").find("a"));
+
+    //根据url转到指定item
+    +function () {
+        var id=window.location.href.split("#")[1];
+        if(id){
+            $vertical.vertical_carousel(parseInt(id));
+        }
+    }();
 });

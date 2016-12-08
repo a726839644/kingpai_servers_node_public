@@ -105,7 +105,7 @@
         }
 
         if (this.options["restsIndicators"]) {
-            $(this.options["restsIndicators"]+".active").removeClass("active");
+            $(this.options["restsIndicators"] + ".active").removeClass("active");
             $($(this.options["restsIndicators"])[pos]).addClass("active");
         }//外部指示器
 
@@ -122,6 +122,7 @@
                 .one('bsTransitionEnd', function () {
                     $active.removeClass('active');
                     that.sliding = false;
+                    location.hash = "#" + $next.prop("id");
                     setTimeout(function () {
                         that.$element.trigger(slidEvent)
                     }, 0)
@@ -131,6 +132,7 @@
             $active.removeClass('active');
             $next.addClass('active');
             this.sliding = false;
+            location.hash = "#" + $next.prop("id");
             this.$element.trigger(slidEvent)
         }
 
@@ -194,7 +196,7 @@
     $(window).on('load', function () {
         $('.vertical-carousel').each(function () {
             var $carousel = $(this);
-            Plugin.call($carousel, $carousel.data())
+            Plugin.call($carousel, $carousel.data());
         })
     })
 
