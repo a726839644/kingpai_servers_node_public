@@ -118,10 +118,10 @@
             Rotate.revokeBlobURL(this.imgURL);
         }
         if (Rotate.getBlobURL) {
-            this.imgURL = Rotate.getBlobURL($(e.target).prop("files")[0]);
+            this.imgURL = Rotate.getBlobURL($(e.touchTarget).prop("files")[0]);
         }
         else {
-            this.imgURL = e.target.value;
+            this.imgURL = e.touchTarget.value;
         }
         var img = new Image();
         img.src = this.imgURL;

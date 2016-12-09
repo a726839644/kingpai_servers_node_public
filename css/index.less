@@ -17,7 +17,7 @@ html, body, .container {
 }
 
 body {
-  background: @bgBlack;
+  background:url("../images/bg-index.jpg");
   overflow: hidden;
   color: @textWhite;
   font-size: 0.8em;
@@ -44,11 +44,18 @@ a {
   }
 }
 
+.self-description {
+  margin:0;
+}
+
 .project-box {
+  margin-top:10px;
   a, img {
+    display: block;
     width: 100%;
   }
-  p{
+  p {
+    margin:10px 0;
     text-align: center;
   }
 }

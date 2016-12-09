@@ -2,14 +2,21 @@
  * Created by a7268 on 2016/11/29.
  */
 
-$(window).ready(function () {
++function ($) {
     var windowHeight;       //浏览器窗口高度
     var $body = $("body");
     var $vertical = $(".vertical-carousel");
     var $verticalBox = $vertical.find(".vertical-carousel-box");
 
+    $(window).ready(function () {
+        setPageHeight();
+        bubbleAnimate($(".skill-bubble").find("a"));
+        urlToItem();
+        touchEvent();
+    });
+
     //自适应页的高度为浏览器可见高度
-    +function setPageHeight() {
+    function setPageHeight() {
 
         function setHeight() {
             windowHeight = $(window).height();
@@ -22,10 +29,10 @@ $(window).ready(function () {
         setHeight();
 
         $(window).on("resize", setHeight);
-    }();
+    };
 
     //冒出效果
-    +function bubbleAnimate($elts) {
+    function bubbleAnimate($elts) {
         var len = $elts.length;
         var duration = 2000;
         var randoms = [];
@@ -108,13 +115,24 @@ $(window).ready(function () {
                 }, i * 500);
             }
         )
-    }($(".skill-bubble").find("a"));
+    }
 
     //根据url转到指定item
-    +function () {
-        var id=window.location.href.split("#")[1];
-        if(id){
+    function urlToItem() {
+        var id = window.location.href.split("#")[1];
+        if (id) {
             $vertical.vertical_carousel(parseInt(id));
         }
-    }();
-});
+    }
+
+    //touch事件
+    function touchEvent() {
+        $(document)
+            .on("touch.kp.top", function () {
+                $vertical.vertical_carousel("prev");
+            })
+            .on("touch.kp.down", function () {
+                $vertical.vertical_carousel('next');
+            });
+    }
+}(jQuery);

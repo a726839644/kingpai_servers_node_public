@@ -24,16 +24,18 @@
         <div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#myVerticalCarousel" data-slide-to="0">个人信息</a></li>
-                    <li><a href="#myVerticalCarousel" data-slide-to="1">能力展示</a></li>
-                    <li><a href="#myVerticalCarousel" data-slide-to="2">作品展示</a></li>
-                    <li><a href="#myVerticalCarousel" data-slide-to="3">联系方式</a></li>
+                    <li class="active"><a href="#myVerticalCarousel" data-target="#myVerticalCarousel"
+                                          data-slide-to="0">个人信息</a></li>
+                    <li><a href="#myVerticalCarousel" data-target="#myVerticalCarousel" data-slide-to="1">能力展示</a></li>
+                    <li><a href="#myVerticalCarousel" data-target="#myVerticalCarousel" data-slide-to="2">作品展示</a></li>
+                    <li><a href="#myVerticalCarousel" data-target="#myVerticalCarousel" data-slide-to="3">联系方式</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-<div id="myVerticalCarousel" class="container vertical-carousel slide" data-item-height="850" data-rests-indicators="#navbar-collapse li">
+<div id="myVerticalCarousel" class="container vertical-carousel slide" data-item-height="850"
+     data-rests-indicators="#navbar-collapse li">
     <ol class="vertical-carousel-indicators">
         <li data-target="#myVerticalCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myVerticalCarousel" data-slide-to="1"></li>
@@ -59,8 +61,8 @@
             <div class="row self-description text-center">
                 <p>本人精通HTML5、CSS3、</p>
                 <p>JavaScript、C/C++、C#、java、jQuery、</p>
-                <p>Bootstrap、nodejs，熟练使用npm、WebStorm、Sublime Text 3</p>
-                <p>拥有优秀的逻辑思维能力，超强的自学能力，对前端技术有着浓厚的兴趣，渴望新知识，希望在实践中不断成长</p>
+                <p>Bootstrap、nodejs，熟练使用npm、WebStorm、Sublime Text</p>
+                <p>较强的逻辑思维能力，自学能力强，对前端技术有着浓厚的兴趣，渴望新知识，希望在实践中不断成长</p>
             </div>
         </div>
         <div id="1" class="item">
@@ -108,6 +110,7 @@
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="my_plugins/vertical_carousal/js/vertical_carousal.js"></script>
 <script src="my_plugins/rotate-image-jQuery/js/rotate-img.min.js"></script>
+<script src="my_plugins/touch_event/js/touch_event.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

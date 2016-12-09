@@ -4,7 +4,7 @@ body,
   height: 100%;
 }
 body {
-  background: #080808;
+  background: url("../images/bg-index.jpg");
   overflow: hidden;
   color: #9d9d9d;
   font-size: 0.8em;
@@ -26,11 +26,19 @@ a:focus {
   opacity: 0;
   cursor: pointer;
 }
+.self-description {
+  margin: 0;
+}
+.project-box {
+  margin-top: 10px;
+}
 .project-box a,
 .project-box img {
+  display: block;
   width: 100%;
 }
 .project-box p {
+  margin: 10px 0;
   text-align: center;
 }
 /*# sourceMappingURL=index.css.map */

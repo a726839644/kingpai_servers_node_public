@@ -20,10 +20,10 @@
         this.$box = this.$element.find(".vertical-carousel-box");
         this.options = options;
         this.sliding = null;
-        this.$active = null;
         this.$items = null;
 
-        this.options.mousewheel && $(document).on('mousewheel.bs.vertical_carousel', $.proxy(this.mousewheel, this));
+        this.options.mousewheel && $(this.options.wheelTarget)
+            .on('mousewheel.bs.vertical_carousel', $.proxy(this.mousewheel, this));
     };
 
     Carousel.VERSION = "1.0.0";
@@ -32,7 +32,8 @@
 
     Carousel.DEFAULTS = {
         mousewheel: true,
-        touch: true
+        touch: true,
+        wheelTarget: document
     };
 
     Carousel.prototype.mousewheel = function (e) {
@@ -56,7 +57,7 @@
 
     Carousel.prototype.getItemIndex = function (item) {
         this.$items = item.parent().children('.item');
-        return this.$items.index(item || this.$active)
+        return this.$items.index(item)
     };
 
     Carousel.prototype.to = function (pos) {
@@ -70,13 +71,27 @@
             return;
         }
 
-        if (this.sliding) {
-            return this.$element.one('slid.bs.verticalCarousel', function () {
-                that.to(pos)
-            }); // yes, "slid"
-        }
+        // if (this.sliding) {
+        //     return this.$element.one('slid.bs.verticalCarousel', function () {
+        //         that.to(pos)
+        //     }); // yes, "slid"
+        // }
 
         return this.slide(pos, this.$items.eq(pos))
+    };
+
+    Carousel.prototype.next = function () {
+        if (this.sliding) {
+            return;
+        }
+        return this.to(this.getItemIndex(this.$element.find('.item.active')) + 1);
+    };
+
+    Carousel.prototype.prev = function () {
+        if (this.sliding) {
+            return;
+        }
+        return this.to(this.getItemIndex(this.$element.find('.item.active')) - 1);
     };
 
     Carousel.prototype.slide = function (pos, next) {
