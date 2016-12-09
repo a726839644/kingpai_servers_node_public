@@ -60,7 +60,7 @@
             for (var i = 0; i < randoms.length; i++) {
                 random.left = Math.random();
                 random.top = Math.random();
-                if (Math.abs(random.left - randoms[i].left) < 0.3) {
+                if (Math.abs(random.left - randoms[i].left) < 0.4) {
                     if (Math.abs(random.top - randoms[i].top) < 0.3) {
                         random.top = Math.random();
                         i = 0;

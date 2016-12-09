@@ -14,7 +14,7 @@
 
 html, body, #myVerticalCarousel {
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
 }
 
 body {
@@ -78,11 +78,15 @@ a {
 }
 
 .self-description {
-  margin: 15px;
+  margin: 15px 0;
+}
+.item{
+  padding-left:15px;
+  padding-right:15px;
 }
 
 .project-box {
-  margin-top: 10px;
+  margin-top:15px;
   a, img {
     display: block;
     width: 100%;
@@ -101,15 +105,14 @@ a {
 
 @media screen and(min-width: 992px){
   body{
-    font-size: 2.5em;
+    //font-size: 2.5em;
   }
 }
 
 @media screen and(min-width: 1200px) {
   #myVerticalCarousel {
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
+    margin: 0 auto;
   }
   body{
     font-size: 2em;
