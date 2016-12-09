@@ -1,10 +1,13 @@
 html,
 body,
-.container {
+#myVerticalCarousel {
   height: 100%;
+  overflow: auto;
 }
 body {
+  font-family: 'Microsoft YaHei';
   background: url("../images/bg-index.jpg");
+  background-size: cover;
   overflow: hidden;
   color: #9d9d9d;
   font-size: 0.8em;
@@ -16,18 +19,46 @@ a:hover,
 a:focus {
   text-decoration: none;
 }
-.skill-bubble {
+.languages {
   height: 70%;
   text-align: left;
   transform-style: preserve-3d;
 }
-.skill-bubble a {
+.languages a {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
+.bubbling {
+  -webkit-animation: kp-bubble 4s linear;
+  -o-animation: kp-bubble 4s linear;
+  animation: kp-bubble 4s linear;
+}
+@keyframes kp-bubble {
+  0.001% {
+    z-index: -2000;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    z-index: 0;
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+    -moz-transform: scale(2.5);
+    -ms-transform: scale(2.5);
+    -o-transform: scale(2.5);
+    transform: scale(2.5);
+  }
+}
 .self-description {
-  margin: 0;
+  margin: 15px;
 }
 .project-box {
   margin-top: 10px;
@@ -40,5 +71,25 @@ a:focus {
 .project-box p {
   margin: 10px 0;
   text-align: center;
+}
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 2em;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    font-size: 2.5em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #myVerticalCarousel {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  body {
+    font-size: 2em;
+  }
 }
 /*# sourceMappingURL=index.css.map */

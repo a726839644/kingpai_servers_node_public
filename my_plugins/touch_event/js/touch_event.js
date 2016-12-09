@@ -15,7 +15,10 @@
         this.trigger = false;
 
         this.$target
-            .on("touchstart.kp.touch", $.proxy(this.start, this));
+            .on("touchstart.kp.touch", $.proxy(this.start, this))
+            .on("touchmove.pk.touch", function (e) {
+                e.preventDefault();
+            });
     };
 
     Touch.VERSION = "1.0.0";
@@ -25,11 +28,9 @@
     };
 
     Touch.prototype.start = function (e) {
-        this.startTouches = e.touches;
+        this.startTouches = e.changedTouches;
 
-        this.$target.one("touchend", $.proxy(this.end, this));
-
-        e.preventDefault();
+        this.$target.one("touchend.kp.touch", $.proxy(this.end, this));
     };
 
     Touch.prototype.end = function (e) {
@@ -45,10 +46,6 @@
                 changeTouches: that.changeTouches
             });
             that.$target.trigger(touchEvent);
-        }
-
-        if (Math.abs(moveX) < 10 && Math.abs(moveY) < 10) {
-            $(e.target).trigger("click");
         }
 
         if (Math.abs(moveX) > Math.abs(moveY)) {
@@ -67,7 +64,6 @@
                 return event("down");
             }
         }
-        e.preventDefault();
     };
 
 
