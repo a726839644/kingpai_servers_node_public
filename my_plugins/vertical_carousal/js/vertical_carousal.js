@@ -32,7 +32,6 @@
 
     Carousel.DEFAULTS = {
         mousewheel: true,
-        touch: true,
         wheelTarget: document
     };
 

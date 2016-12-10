@@ -4,11 +4,10 @@
 
 +function ($) {
     var windowHeight;       //浏览器窗口高度
-    var $body = $("body");
     var $vertical = $(".vertical-carousel");
     var $verticalBox = $vertical.find(".vertical-carousel-box");
 
-    $(window).ready(function () {
+    $(window).on('load',function () {
         setPageHeight();
         bubbleAnimate($(".languages").find("a"));
         urlToItem();
