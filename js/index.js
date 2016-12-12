@@ -3,27 +3,13 @@
  */
 
 +function ($) {
-    var windowHeight;       //浏览器窗口高度
     var $vertical = $(".vertical-carousel");
     var $verticalBox = $vertical.find(".vertical-carousel-box");
 
     $(window).on('load',function () {
-        setPageHeight();
         bubbleAnimate($(".languages").find("a"));
         touchEvent();
     });
-
-    //自适应页的高度为浏览器可见高度
-    function setPageHeight() {
-
-        function setHeight() {
-            windowHeight = $(window).height();
-        }
-
-        setHeight();
-
-        $(window).on("resize", setHeight);
-    }
 
     //冒出效果
     function bubbleAnimate($elts) {
@@ -141,7 +127,7 @@
                 var $elt = $(this);
                 setTimeout(function () {
                     bubbleAnimate($elt)
-                }, i * 300);
+                }, i * 600);
             }
         )
     }
