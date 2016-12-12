@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <title>KINGPAI resume</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="my_plugins/vertical_carousal/css/vertical_carousal.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="my_plugins/vertical_carousal/css/vertical_carousal.min.css">
     <link rel="stylesheet" href="my_plugins/rotate_image/css/rotate_img.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.min.css"/>
 </head>
 <body>
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
@@ -34,7 +35,7 @@
         </div>
     </div>
 </div>
-<div id="myVerticalCarousel" class="vertical-carousel slide" data-item-height="850"
+<div id="myVerticalCarousel" class="vertical-carousel"
      data-rests-indicators="#navbar-collapse li">
     <ol class="vertical-carousel-indicators hidden-xs">
         <li data-target="#myVerticalCarousel" data-slide-to="0" class="active"></li>
@@ -43,7 +44,7 @@
         <li data-target="#myVerticalCarousel" data-slide-to="3"></li>
     </ol>
     <div class="vertical-carousel-box">
-        <div id="0" class="item active">
+        <div id="first" class="item active">
             <div class="row languages">
                 <a>HTML5</a>
                 <a>CSS3</a>
@@ -59,100 +60,58 @@
                 <a>npm</a>
             </div>
             <div class="row self-description text-center">
-                <p>本人精通HTML5、CSS3、</p>
+                <p>本人掌握HTML5、CSS3、</p>
                 <p>JavaScript、C/C++、C#、java、jQuery、</p>
                 <p>Bootstrap、nodejs，熟练使用npm、WebStorm、Sublime Text</p>
-                <p>较强的逻辑思维能力，自学能力强，对前端技术有着浓厚的兴趣，渴望新知识，希望在实践中不断成长</p>
+                <p>较强的逻辑思维与自学能力，对前端技术有着浓厚的兴趣，渴望新知识，希望在实践中不断成长.</p>
             </div>
         </div>
-        <div id="1" class="item">
+        <div id="second" class="item">
             <div class="row">
-                <div class="col col-xs-6 col-md-4 project-box">
-                    <a href="/my_plugins/vertical_carousal/js/vertical_carousal.js">
-                        <img src="images/temp.jpg">
+                <div class="col col-xs-6 project-box">
+                    <a href="/my_plugins/vertical_carousal">
+                        <img src="images/vertical_carousel.jpg">
                     </a>
                     <p class="project-title">向下翻页插件</p>
                 </div>
-                <div class="col col-xs-6 col-md-4 project-box">
-                    <a href="/my_plugins/touch_event/js/touch_event.js">
-                        <img src="images/temp.jpg">
+                <div class="col col-xs-6 project-box">
+                    <a href="/my_plugins/vertical_carousal">
+                        <img src="images/touch_event.jpg">
                     </a>
                     <p class="project-title">触屏滑动插件</p>
                 </div>
-                <div class="col col-xs-6 col-md-4 project-box">
-                    <a href="/my_plugins/rotate_image/test.html">
-                        <img src="images/rotate-image-jQuery.jpg">
+                <div class="col col-xs-6 project-box">
+                    <a href="/my_plugins/rotate_image">
+                        <img src="images/rotate_image.jpg">
                     </a>
                     <p class="project-title">向下翻页插件</p>
                 </div>
-                <div class="col col-xs-6 col-md-4 project-box">
-                    <a href="#">
-                        <img src="images/temp.jpg">
-                    </a>
-                    <p class="project-title">建设中</p>
-                </div>
-                <div class="col col-xs-6 col-md-4 project-box">
-                    <a href="#">
-                        <img src="images/temp.jpg">
-                    </a>
-                    <p class="project-title">建设中</p>
-                </div>
-                <div class="col col-xs-6 col-md-4 project-box">
-                    <a href="#">
-                        <img src="images/temp.jpg">
-                    </a>
-                    <p class="project-title">建设中</p>
-                </div>
             </div>
         </div>
-        <div id="2" class="item">
+        <div id="thirdly" class="item">
             <div class="row">
-                <div class="col col-xs-6 col-md-4 project-box">
+                <div class="col col-xs-6 project-box">
                     <a href="/zjgs_autofs">
                         <img src="images/zjgs_autofs.jpg">
                     </a>
                     <p class="project-title">浙江国税自动填报报表</p>
                 </div>
-                <div class="col col-xs-6 col-md-4 project-box">
+                <div class="col col-xs-6 project-box">
                     <a href="/turn_card/index.html">
-                        <img src="images/turn-card.jpg">
+                        <img src="images/turn_card.jpg">
                     </a>
                     <p class="project-title">翻牌小游戏</p>
                 </div>
-                <div class="col col-xs-6 col-md-4 project-box">
-                    <a href="#">
-                        <img src="images/temp.jpg">
-                    </a>
-                    <p class="project-title">建设中</p>
-                </div>
-                <div class="col col-xs-6 col-md-4 project-box">
-                    <a href="#">
-                        <img src="images/temp.jpg">
-                    </a>
-                    <p class="project-title">建设中</p>
-                </div>
-                <div class="col col-xs-6 col-md-4 project-box">
-                    <a href="#">
-                        <img src="images/temp.jpg">
-                    </a>
-                    <p class="project-title">建设中</p>
-                </div>
-                <div class="col col-xs-6 col-md-4 project-box">
-                    <a href="#">
-                        <img src="images/temp.jpg">
-                    </a>
-                    <p class="project-title">建设中</p>
-                </div>
             </div>
         </div>
-        <div id="3" class="item"></div>
+        <div id="fourthly" class="item"></div>
     </div>
 </div>
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="my_plugins/vertical_carousal/js/vertical_carousal.js"></script>
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="my_plugins/vertical_carousal/js/vertical_carousal.min.js"></script>
 <script src="my_plugins/rotate_image/js/rotate_img.min.js"></script>
-<script src="my_plugins/touch_event/js/touch_event.js"></script>
-<script src="js/index.js"></script>
+<script src="my_plugins/touch_event/js/touch_event.min.js"></script>
+<script src="js/index.min.js"></script>
 </body>
 </html>

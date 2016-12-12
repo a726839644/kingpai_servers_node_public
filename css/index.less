@@ -23,7 +23,6 @@ body {
   background-size: cover;
   overflow: hidden;
   color: @textWhite;
-  font-size: 0.8em;
 }
 
 .item {
@@ -37,7 +36,7 @@ a {
 }
 
 .languages {
-  height: 70%;
+  height: 60%;
   text-align: left;
   transform-style: preserve-3d;
   a {
@@ -87,9 +86,16 @@ a {
 
 .project-box {
   margin-top:15px;
+  max-width:500px;
   a, img {
     display: block;
     width: 100%;
+  }
+  img{
+    border-radius: 5px;
+    &:hover,&:focus{
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 20px rgba(180, 180, 180, .8);
+    }
   }
   p {
     margin: 10px 0;
@@ -98,24 +104,18 @@ a {
 }
 
 @media screen and(min-width: 768px){
-  body{
-    font-size: 2em;
+  .item{
+    font-size: 1.2em;
   }
 }
 
 @media screen and(min-width: 992px){
-  body{
-    //font-size: 2.5em;
-  }
 }
 
 @media screen and(min-width: 1200px) {
   #myVerticalCarousel {
     width: 100%;
     margin: 0 auto;
-  }
-  body{
-    font-size: 2em;
   }
 }
 

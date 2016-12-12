@@ -10,7 +10,6 @@
     $(window).on('load',function () {
         setPageHeight();
         bubbleAnimate($(".languages").find("a"));
-        urlToItem();
         touchEvent();
     });
 
@@ -19,10 +18,6 @@
 
         function setHeight() {
             windowHeight = $(window).height();
-            $verticalBox.css({//修正位置
-                transform: "translateY(-" + windowHeight * parseInt($verticalBox.find(".active").prop("id")) + "px)"
-            });
-            $vertical.attr("data-item-height", windowHeight);
         }
 
         setHeight();
@@ -92,10 +87,6 @@
                 $elt.css({
                     left: randoms[0].left * 85 + "%",
                     top: randoms[0].top * 95 + "%",
-                    // transform: "scale(1)",
-                    // opacity: 0,
-                    // zIndex: -2000,
-                    // marginTop: 1,
                     color: "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")"
                 });
                 if (!animationend) {
@@ -150,17 +141,9 @@
                 var $elt = $(this);
                 setTimeout(function () {
                     bubbleAnimate($elt)
-                }, i * 500);
+                }, i * 300);
             }
         )
-    }
-
-    //根据url转到指定item
-    function urlToItem() {
-        var id = window.location.href.split("#")[1];
-        if (id) {
-            $vertical.vertical_carousel(parseInt(id));
-        }
     }
 
     //touch事件
