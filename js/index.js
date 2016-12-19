@@ -6,9 +6,10 @@
     var $vertical = $(".vertical-carousel");
     var $verticalBox = $vertical.find(".vertical-carousel-box");
 
-    $(window).on('load',function () {
+    $(window).on('load', function () {
         bubbleAnimate($(".languages").find("a"));
         touchEvent();
+        typing();
     });
 
     //冒出效果
@@ -141,5 +142,46 @@
             .on("touch.kp.down", function () {
                 $vertical.vertical_carousel('next');
             });
+    }
+
+    //打字效果
+    function typing() {
+        var $text = $(".self-tall");
+        var speed = 70;
+        var s = [];
+        s[0] = "熟练掌握HTML5、CSS3、";
+        s[1] = "JavaScript、C/C++、C#、java、jQuery、";
+        s[2] = "Bootstrap、nodejs，熟练使用npm、WebStorm、Sublime Text";
+        s[3] = "较强的逻辑思维与自学能力，对前端技术有着浓厚的兴趣，渴望新知识，希望在实践中不断成长。";
+
+        var i = 0, j = 0;
+        var br = "\<br\>";
+
+        out();
+
+        function out() {
+            var text = "";
+            for (var z = 0; z < j; z++) {
+                text += s[z] + br;
+            }
+            var interval = setInterval(function () {
+                if (i >= s[j].length) {
+                    setTimeout(function () {
+                        j++;
+                        if (j < s.length) {
+                            i = 0;
+                            out();
+                        }
+                        else {
+                            $(".typed-cursor").addClass("hide");
+                        }
+                    }, speed * 6);
+                    clearInterval(interval);
+                    return;
+                }
+                $text.html(text + s[j].substr(0, i + 1));
+                i++
+            }, speed);
+        }
     }
 }(jQuery);

@@ -58,14 +58,15 @@ a:focus {
 }
 .self-description {
   margin: 15px 0;
+  color: #2fe92f;
 }
 .item {
   padding-left: 15px;
   padding-right: 15px;
 }
 .project-box {
-  margin-top: 15px;
-  max-width: 500px;
+  padding-top: 15px;
+  max-width: 330px;
 }
 .project-box a,
 .project-box img {
@@ -79,9 +80,23 @@ a:focus {
 .project-box img:focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 20px rgba(180, 180, 180, 0.8);
 }
-.project-box p {
-  margin: 10px 0;
-  text-align: center;
+.self-tall {
+  letter-spacing: 0.1em;
+  line-height: 150%;
+}
+.typed-cursor {
+  -webkit-animation: blink 0.7s infinite;
+  -o-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 @media screen and (min-width: 768px) {
   .item {
