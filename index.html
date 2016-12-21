@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <title>KINGPAI resume</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="my_plugins/vertical_carousal/css/vertical_carousal.min.css">
     <link rel="stylesheet" href="my_plugins/rotate_image/css/rotate_img.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.min.css"/>
@@ -25,11 +25,18 @@
         <div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#myVerticalCarousel" data-target="#myVerticalCarousel"
-                                          data-slide-to="0">个人信息</a></li>
-                    <li><a href="#myVerticalCarousel" data-target="#myVerticalCarousel" data-slide-to="1">能力展示</a></li>
-                    <li><a href="#myVerticalCarousel" data-target="#myVerticalCarousel" data-slide-to="2">作品展示</a></li>
-                    <li><a href="#myVerticalCarousel" data-target="#myVerticalCarousel" data-slide-to="3">联系方式</a></li>
+                    <li class="active">
+                        <a href="#myVerticalCarousel" data-target="#myVerticalCarousel" data-slide-to="0">个人信息</a>
+                    </li>
+                    <li>
+                        <a href="#myVerticalCarousel" data-target="#myVerticalCarousel" data-slide-to="1">能力展示</a>
+                    </li>
+                    <li>
+                        <a href="#myVerticalCarousel" data-target="#myVerticalCarousel" data-slide-to="2">作品展示</a>
+                    </li>
+                    <li>
+                        <a href="#myVerticalCarousel" data-target="#myVerticalCarousel" data-slide-to="3">联系方式</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -38,10 +45,15 @@
 <div id="myVerticalCarousel" class="vertical-carousel"
      data-rests-indicators="#navbar-collapse li">
     <ol class="vertical-carousel-indicators hidden-xs">
-        <li data-target="#myVerticalCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myVerticalCarousel" data-slide-to="1"></li>
-        <li data-target="#myVerticalCarousel" data-slide-to="2"></li>
-        <li data-target="#myVerticalCarousel" data-slide-to="3"></li>
+        <li data-target="#myVerticalCarousel" data-slide-to="0" class="active">
+
+        </li>
+        <li data-target="#myVerticalCarousel" data-slide-to="1">
+        </li>
+        <li data-target="#myVerticalCarousel" data-slide-to="2">
+        </li>
+        <li data-target="#myVerticalCarousel" data-slide-to="3">
+        </li>
     </ol>
     <div class="vertical-carousel-box">
         <div id="first" class="item active">
@@ -59,50 +71,69 @@
                 <a>Sublime Text 3</a>
                 <a>npm</a>
             </div>
-            <div class="row self-description text-center">
-                <span class="self-tall"></span>
-                <span class="typed-cursor">|</span>
+            <div class="row">
+                <p class="self-description">
+                    <span class="self-tall"></span>
+                    <span class="typed-cursor">|</span>
+                </p>
             </div>
         </div>
         <div id="second" class="item">
             <div class="row">
                 <div class="col col-xs-6 project-box">
-                    <a href="/my_plugins/vertical_carousal">
+                    <a target="_blank" href="/my_plugins/vertical_carousal/#myVerticalCarousel_d">
                         <img src="images/vertical_carousel.jpg">
                     </a>
                     <p class="project-title">向下翻页插件</p>
                 </div>
                 <div class="col col-xs-6 project-box">
-                    <a href="/my_plugins/vertical_carousal">
+                    <a target="_blank" href="/my_plugins/vertical_carousal/#myVerticalCarousel_b">
                         <img src="images/touch_event.jpg">
                     </a>
                     <p class="project-title">触屏滑动插件</p>
                 </div>
                 <div class="col col-xs-6 project-box">
-                    <a href="/my_plugins/rotate_image">
+                    <a target="_blank" href="/my_plugins/rotate_image">
                         <img src="images/rotate_image.jpg">
                     </a>
-                    <p class="project-title">向下翻页插件</p>
+                    <p class="project-title">旋转图片插件</p>
                 </div>
             </div>
         </div>
         <div id="thirdly" class="item">
             <div class="row">
                 <div class="col col-xs-6 project-box">
-                    <a href="/zjgs_autofs">
+                    <a target="_blank" href="/zjgs_autofs">
                         <img src="images/zjgs_autofs.jpg">
                     </a>
                     <p class="project-title">浙江国税自动填报报表</p>
                 </div>
                 <div class="col col-xs-6 project-box">
-                    <a href="/turn_card/index.html">
+                    <a target="_blank" href="/turn_card">
                         <img src="images/turn_card.jpg">
                     </a>
                     <p class="project-title">翻牌小游戏</p>
                 </div>
             </div>
         </div>
-        <div id="fourthly" class="item"></div>
+        <div id="fourthly" class="item">
+            <div class="row text-center">
+                <div class="col col-xs-6 col-xs-push-3 weixin">
+                    <img src="images/weixin.jpg"/>
+                </div>
+            </div>
+            <div class="row text-center">
+                <canvas class="ball" width="300" height="300">
+                </canvas>
+            </div>
+            <div class="row text-center">
+                <div class="contact">
+                    <p>GitHub主页：<a target="_blank" href="https://github.com/a726839644">https://github.com/a726839644</a></p>
+                    <p class="nbsp">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <p>微信/QQ：726839644&nbsp;&nbsp;邮箱：726839644@qq.com</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
@@ -110,6 +141,7 @@
 <script src="my_plugins/vertical_carousal/js/vertical_carousal.min.js"></script>
 <script src="my_plugins/rotate_image/js/rotate_img.min.js"></script>
 <script src="my_plugins/touch_event/js/touch_event.min.js"></script>
+<script src="js/ball.js"></script>
 <!--<script src="js/index.js"></script>-->
 <script src="js/index.min.js"></script>
 </body>

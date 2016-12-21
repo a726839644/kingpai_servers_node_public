@@ -35,8 +35,12 @@ a {
   }
 }
 
+.self-description,.project-title {
+  text-align: center;
+}
+
 .languages {
-  height: 60%;
+  height: 70%;
   text-align: left;
   transform-style: preserve-3d;
   a {
@@ -77,8 +81,14 @@ a {
 }
 
 .self-description {
-  margin: 15px 0;
-  color: rgb(47, 233, 47);
+  position: absolute;
+  z-index: 3000;
+  width:100%;
+  top: 80%;
+  //padding:0 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #30ea30;
 }
 
 .item {
@@ -101,11 +111,6 @@ a {
   }
 }
 
-.self-tall{
-  letter-spacing: 0.1em;
-  line-height: 150%;
-}
-
 .typed-cursor {
   -webkit-animation: blink 0.7s infinite;
   -o-animation: blink 0.7s infinite;
@@ -121,13 +126,43 @@ a {
   }
 }
 
-@media screen and(min-width: 768px) {
-  .item {
-    font-size: 1.2em;
+.weixin {
+  margin:30px 0;
+  img{
+    max-width: 100%;
+  }
+}
+.contact {
+  p{
+    font-size: 0.7rem;
+  }
+}
+.nbsp{
+  display: none;
+}
+
+@media screen and(min-width: 400px) {
+  html {
+    font-size: 22px;
   }
 }
 
+@media screen and(min-width: 600px) {
+  html {
+    font-size: 32px;
+  }
+}
+
+@media screen and(min-width: 768px) {
+
+}
+
 @media screen and(min-width: 992px) {
+  .contact{
+    p{
+      display: inline-block;
+    }
+  }
 }
 
 @media screen and(min-width: 1200px) {
