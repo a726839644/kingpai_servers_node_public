@@ -57,7 +57,7 @@ a {
 }
 
 @keyframes kp-bubble {
-  0.001% { //yui-compressor bug
+  0% {
     z-index: -2000;
     opacity: 0;
     -webkit-transform: scale(1);
@@ -104,9 +104,19 @@ a {
     width: 100%;
   }
   img {
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
     border-radius: 5px;
     &:hover, &:focus {
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 20px rgba(180, 180, 180, .8);
+      -webkit-transform: translate(0, -10px);
+      -moz-transform: translate(0, -10px);
+      -ms-transform: translate(0, -10px);
+      -o-transform: translate(0, -10px);
+      transform: translate(0, -10px);
     }
   }
 }

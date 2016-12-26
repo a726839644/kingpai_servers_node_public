@@ -48,3 +48,4 @@ Temporary Items
 .idea
 .bowerrc
 bower.json
+node_modules
