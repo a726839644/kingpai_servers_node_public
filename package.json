@@ -19,7 +19,9 @@
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wp":"webpack --progress --colors -p -d",
+    "wp-ds":"webpack-dev-server --progress --colors -d"
   },
   "repository": {
     "type": "git",

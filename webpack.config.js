@@ -27,7 +27,6 @@ module.exports = {
             filename: 'index.html'
         }),
         new ExtractTextPlugin('css/[name].css'),
-        new webpack.optimize.UglifyJsPlugin(),  //  js 混淆压缩代码插件
         new webpack.optimize.CommonsChunkPlugin('js/common.js') // 提取公共代码的插件
     ],
     devServer:{
