@@ -38,23 +38,20 @@
   background: #ffffff;
   animation: unyuan 5s infinite linear;
 }
-.e1 .electron {
-  left: 100px;
-}
 .e2 .electron {
   transform: translate3D(-50px, 0, -20px);
 }
 @keyframes yuan {
   0% {
-    transform: rotate3d(0, 1, 0, 0);
+    transform: rotate3d(1, 1, 1, 0);
   }
   100% {
-    transform: rotate3d(0, 1, 0, 360deg);
+    transform: rotate3d(1, 1, 1, 360deg);
   }
 }
 @keyframes unyuan {
   0% {
-    transform: rotate3d(0, 1, 0, 0);
+    transform: rotate3d(1, 1, 1, 0);
   }
   100% {
     transform: rotate3d(1, 1, 1, -360deg);
