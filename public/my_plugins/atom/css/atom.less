@@ -1,52 +1,75 @@
 .circle(@r){
-  position: absolute;
-  display: block;
   width:@r;
   height:@r;
   border-radius: 50%;
+  margin:-@r/2 0 0 -@r/2;
+}
+.circle_shadow(@r){
+  .circle(@r);
   box-shadow: 0 0 2*@r @r/2 #ffffff;
 }
-#atom{
+
+.atom{
+  position: relative;
   width:300px;
   height:300px;
   background: #000;
 }
 .nucleus{
+  display: block;
+  position: absolute;
   background: #ffffff;
-  .circle(10px);
+  .circle_shadow(10px);
   left:150px;
   top:150px;
 }
-.electron{
-  background: #ffffff;
-  .circle(2px);
-  left:100px;
-  top:150px;
-  animation:yuan 1s infinite;
-  transform-origin: 50px 0 0;
+
+.electron_box {
+  position: absolute;
+  display: block;
+  .circle(4px);
+  animation:yuan 5s infinite linear;
   transform-style: preserve-3d;
-  transform:rotateX(30deg);
+  perspective:1000px;
+  left:150px;
+  top:150px;
 }
-@keyframes yuan {
-  0%{
-    transform: rotateY(0);
-  }
-  100%{
-    transform: rotateY(360deg);
+
+.electron {
+  .circle_shadow(4px);
+  background: #ffffff;
+  animation:unyuan 5s infinite linear;
+}
+
+.e1{
+
+  .electron{
+    left:100px;
   }
 }
 
-@keyframes pathway {
-  0%,100%{
-    transform: translate3D(0, 0, 0);
+.e2{
+
+  .electron{
+    transform: translate3D(-50px, 0, -20px);
   }
-  25%{
-    transform: translate3D(50px, 0, 50px);
+}
+
+@keyframes yuan {
+  0%{
+    transform: rotate3d(0,1,0,0);
   }
-  50%{
-    transform: translate3D(100px, 0, 0);
+  100%{
+    transform: rotate3d(0,1,0,360deg);
   }
-  75%{
-    transform: translate3D(50px, 0, -50px);
+}
+
+
+@keyframes unyuan {
+  0%{
+    transform: rotate3d(0,1,0,0);
+  }
+  100%{
+    transform: rotate3d(1,1,1,-360deg);
   }
 }

@@ -58,7 +58,7 @@
                         i = 0;
                     }
                 }
-                if (++count > 3000) {  //防止死机
+                if (++count > 8000) {  //防止死机
                     console.log(count);
                     break;
                 }
