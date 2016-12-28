@@ -13,6 +13,7 @@
         this.ctx = this.c.getContext('2d');
         this.options = StarrySky.extend(StarrySky.DEFAULTS, options);
         this.keyforms = [];
+        this.frame = null;
         this.width = null;
         this.height = null;
         this.leftX = null;
@@ -23,6 +24,10 @@
 
         var that = this;
 
+        if(!this.options.showFrame){
+            this.frame.style.display = 'none';
+        }
+
         window.onresize = function () {
             that.setSize();
             that.initAnimate();
@@ -31,8 +36,9 @@
 
     StarrySky.DEFAULTS = {
         starColor: '#fefefe',
-        starSize: 1,
-        n: 100
+        starSize: 2,
+        n: 50,
+        showFrame:true
     };
 
     StarrySky.extend = function () {
@@ -59,6 +65,14 @@
         this.c.style.left = 0;
         this.c.style.top = 0;
         this.c.style.zIndex = -9999;
+
+        this.frame = document.createElement('span');
+        this.c.parentNode.insertBefore(this.frame, this.c);
+
+        this.frame.style.position = 'fixed';
+        this.frame.style.bottom = '10px';
+        this.frame.style.left = '10px';
+        this.frame.style.color = 'red';
 
         this.setSize();
         this.initAnimate();
@@ -108,20 +122,17 @@
             this.pause();
         }
         var that = this;
-        var count = 0;
+        var time = new Date().getTime();
         this.interval = setInterval(function () {
             that.nextFrame();
-            count++;
+            that.frame.innerHTML = Math.round(1000 / (new Date().getTime() - time));
+            time = new Date().getTime();
         }, 16);
-        this._count = setInterval(function () {
-            console.log(count);
-            count = 0;
-        }, 1000);
+
     };
 
     StarrySky.prototype.pause = function () {
         clearInterval(this.interval);
-        clearInterval(this._count);
     };
 
     StarrySky.prototype.nextFrame = function () {
@@ -169,9 +180,9 @@
         ctx.fillStyle = color;
 
         // for (var i = 0; i < 1; i++) {
-            ctx.beginPath();
-            ctx.arc(options.x, options.y, size, 0, Math.PI * 2);
-            ctx.fill();
+        ctx.beginPath();
+        ctx.arc(options.x, options.y, size, 0, Math.PI * 2);
+        ctx.fill();
         // }
 
         return this;
