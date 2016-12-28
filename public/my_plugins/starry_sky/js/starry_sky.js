@@ -24,7 +24,7 @@
 
         var that = this;
 
-        if(!this.options.showFrame){
+        if (!this.options.showFrame) {
             this.frame.style.display = 'none';
         }
 
@@ -38,7 +38,7 @@
         starColor: '#fefefe',
         starSize: 2,
         n: 50,
-        showFrame:true
+        showFrame: true
     };
 
     StarrySky.extend = function () {
@@ -125,7 +125,7 @@
         var time = new Date().getTime();
         this.interval = setInterval(function () {
             that.nextFrame();
-            that.frame.innerHTML = Math.round(1000 / (new Date().getTime() - time));
+            that.frame.innerHTML = Math.min(Math.round(1000 / (new Date().getTime() - time)), 60);
             time = new Date().getTime();
         }, 16);
 
