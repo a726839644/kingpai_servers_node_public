@@ -2,40 +2,181 @@
  * Created by a7268 on 2016/12/27.
  * author KINGPAI
  * 星空背景图
- * 版本 1.0.0
+ * 版本 0.8.0
  */
 +function () {
     'use strict';
 
     //定义starrySky类
-    var StarrySky = function (canvas) {
+    var StarrySky = function (canvas, options) {
         this.c = canvas;
         this.ctx = this.c.getContext('2d');
+        this.options = StarrySky.extend(StarrySky.DEFAULTS, options);
+        this.keyforms = [];
+        this.width = null;
+        this.height = null;
+        this.leftX = null;
+        this.topY = null;
+        this.interval = null;
 
-        this.initStyle();
-        this.setSize();
+        this.init();
+
+        var that = this;
+
+        window.onresize = function () {
+            that.setSize();
+            that.initAnimate();
+        };
+    };
+
+    StarrySky.DEFAULTS = {
+        starColor: '#fefefe',
+        starSize: 1,
+        n: 100
+    };
+
+    StarrySky.extend = function () {
+        var o = {};
+        for (var i = 0; i < arguments.length; i++) {
+            var arg = arguments[i];
+            if (typeof arg == 'object') {
+                for (var name in arg) {
+                    if (arg.hasOwnProperty(name)) {
+                        o[name] = arg[name];
+                    }
+                }
+            }
+        }
+        return o;
     };
 
 
-    StarrySky.prototype.initStyle = function () {
+    StarrySky.prototype.init = function () {
+
         this.c.style.position = 'fixed';
-        this.c.style.margin = 0;
-        this.c.style.padding = 0;
         this.c.style.border = 0;
+        this.c.style.background = "#080808";
+        this.c.style.left = 0;
+        this.c.style.top = 0;
+        this.c.style.zIndex = -9999;
+
+        this.setSize();
+        this.initAnimate();
     };
 
     StarrySky.prototype.setSize = function () {
-        var width = window.innerWidth;
-        var height = window.innerHeight;
-        this.c.width = width;
-        this.c.height = height;
-        this.c.style.width = width + 'px';
-        this.c.style.height = height + 'px';
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+        this.c.width = this.width;
+        this.c.height = this.height;
+        this.c.style.width = this.width + 'px';
+        this.c.style.height = this.height + 'px';
+        this.leftX = -this.width / 2;
+        this.topY = -this.height / 2;
     };
 
-    var star = function () {
-
+    StarrySky.prototype.setAnimate = function (options) {
+        return StarrySky.extend({
+            nowX: this.randomPM() * this.leftX,
+            nowY: this.randomPM() * this.topY,
+            // nowX:0,
+            // nowY:0,
+            speedX: this.randomPM(),
+            speedY: this.randomPM()
+        }, options);
     };
+
+    StarrySky.prototype.randomPM = function () {
+        var random = Math.random();
+        while (random < 0.1) {
+            random = Math.random();
+        }
+        return Math.random() * (Math.random() > 0.5 ? 1 : -1);
+    };
+
+    StarrySky.prototype.initAnimate = function () {
+        this.pause();
+        for (var i = 0; i < this.options.n; i++) {
+            this.keyforms[i] = this.setAnimate();
+        }
+        this.ctx.translate(this.width / 2, this.height / 2);    //定义坐标原定
+        this.start();
+    };
+
+    StarrySky.prototype.start = function () {
+        if (this.interval) {
+            this.pause();
+        }
+        var that = this;
+        var count = 0;
+        this.interval = setInterval(function () {
+            that.nextFrame();
+            count++;
+        }, 10);
+        this._count = setInterval(function () {
+            console.log(count);
+            count = 0;
+        }, 1000);
+    };
+
+    StarrySky.prototype.pause = function () {
+        clearInterval(this.interval);
+        clearInterval(this._count);
+    };
+
+    StarrySky.prototype.nextFrame = function () {
+        this.ctx.clearRect(this.leftX, this.topY, this.width, this.height);
+        for (var i = 0; i < this.options.n; i++) {
+            var keyform = this.keyforms[i];
+            this.createStar({
+                x: keyform.nowX,
+                y: keyform.nowY
+            });
+            keyform.nowX += keyform.speedX;
+            keyform.nowY += keyform.speedY;
+
+            var option = {};
+            if (keyform.nowX > -this.leftX) {
+                option.nowX = -this.leftX;
+            } else if (keyform.nowX < this.leftX) {
+                option.nowX = this.leftX;
+            } else if (keyform.nowY > -this.topY) {
+                option.nowY = -this.topY;
+            } else if (keyform.nowY < this.topY) {
+                option.nowY = this.topY;
+            }
+            if (option.nowX || option.nowY) {
+                this.keyforms[i] = this.setAnimate();
+                // this.keyforms[i] = this.reflect(this.keyforms[i], option.nowX ? -1 : 1, option);
+            }
+        }
+    };
+
+    StarrySky.prototype.reflect = function (keyform, x_y, option) {
+        return StarrySky.extend(keyform, {
+            speedX: keyform.speedX *= x_y,
+            speedY: keyform.speedY *= -x_y
+        }, option);
+    };
+
+    StarrySky.prototype.createStar = function (options) {
+        var size = options.starSize || this.options.starSize;
+        var color = options.starColor || this.options.starColor;
+        var ctx = this.ctx;
+
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 20;
+        ctx.fillStyle = color;
+
+        for (var i = 0; i < 2; i++) {
+            ctx.beginPath();
+            ctx.arc(options.x, options.y, size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        return this;
+    };
+
     window.onload = function () {
         var c = document.getElementById('starry_sky');
         var starrySky = new StarrySky(c);

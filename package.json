@@ -21,7 +21,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wp":"webpack --progress --colors -p -d",
-    "wp-ds":"webpack-dev-server --progress --colors -d"
+    "wps":"webpack-dev-server --progress --colors -d"
   },
   "repository": {
     "type": "git",

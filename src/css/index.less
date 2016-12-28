@@ -25,6 +25,10 @@ body {
   color: @textWhite;
 }
 
+#starry_sky {
+  margin-top: 50px;
+}
+
 .item {
   padding-top: 60px;
 }
@@ -35,8 +39,13 @@ a {
   }
 }
 
-.self-description,.project-title {
+p {
+  font-size: 1rem;
+}
+
+.self-description, .project-title {
   text-align: center;
+  font-size: 22px;
 }
 
 .languages {
@@ -83,7 +92,7 @@ a {
 .self-description {
   position: absolute;
   z-index: 3000;
-  width:100%;
+  width: 100%;
   top: 80%;
   font-size: 1.5rem;
   font-weight: 700;
@@ -136,21 +145,23 @@ a {
 }
 
 .weixin {
-  margin:30px 0;
-  img{
+  margin: 30px 0;
+  img {
     max-width: 100%;
   }
 }
+
 .contact {
   position: absolute;
   left: 0;
   right: 0;
-  bottom:5%;
+  bottom: 5%;
   p {
     font-size: 0.7rem;
   }
 }
-.nbsp{
+
+.nbsp {
   display: none;
 }
 
@@ -167,12 +178,11 @@ a {
 }
 
 @media screen and(min-width: 768px) {
-
 }
 
 @media screen and(min-width: 992px) {
-  .contact{
-    p{
+  .contact {
+    p {
       display: inline-block;
     }
   }
