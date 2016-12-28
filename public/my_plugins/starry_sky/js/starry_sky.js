@@ -112,7 +112,7 @@
         this.interval = setInterval(function () {
             that.nextFrame();
             count++;
-        }, 10);
+        }, 16);
         this._count = setInterval(function () {
             console.log(count);
             count = 0;
@@ -168,11 +168,11 @@
         ctx.shadowBlur = 20;
         ctx.fillStyle = color;
 
-        for (var i = 0; i < 2; i++) {
+        // for (var i = 0; i < 1; i++) {
             ctx.beginPath();
             ctx.arc(options.x, options.y, size, 0, Math.PI * 2);
             ctx.fill();
-        }
+        // }
 
         return this;
     };
