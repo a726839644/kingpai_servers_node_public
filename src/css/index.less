@@ -18,11 +18,15 @@ html, body, #myVerticalCarousel {
 }
 
 body {
-  font-family: 'Microsoft YaHei';
   background: #080808;
   background-size: cover;
   overflow: hidden;
   color: @textWhite;
+}
+
+p {
+  font-size: 1rem;
+  text-align: center;
 }
 
 #starry_sky {
@@ -37,15 +41,6 @@ a {
   &:hover, &:focus {
     text-decoration: none;
   }
-}
-
-p {
-  font-size: 1rem;
-}
-
-.self-description, .project-title {
-  text-align: center;
-  font-size: 22px;
 }
 
 .languages {
@@ -94,7 +89,7 @@ p {
   z-index: 3000;
   width: 100%;
   top: 80%;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #30ea30;
 }
@@ -106,10 +101,11 @@ p {
 
 .project-box {
   padding-top: 15px;
-  max-width: 330px;
   a, img {
+    margin:0 auto;
     display: block;
     width: 100%;
+    max-width: 300px;
   }
   img {
     -webkit-transition: all 0.4s;
@@ -127,6 +123,9 @@ p {
       transform: translate(0, -10px);
     }
   }
+}
+.project-title{
+  margin:5px 0;
 }
 
 .typed-cursor {
@@ -156,28 +155,16 @@ p {
   left: 0;
   right: 0;
   bottom: 5%;
-  p {
-    font-size: 0.7rem;
-  }
 }
 
 .nbsp {
   display: none;
 }
 
-@media screen and(min-width: 400px) {
+@media screen and(min-width: 768px) {
   html {
     font-size: 22px;
   }
-}
-
-@media screen and(min-width: 600px) {
-  html {
-    font-size: 32px;
-  }
-}
-
-@media screen and(min-width: 768px) {
 }
 
 @media screen and(min-width: 992px) {
