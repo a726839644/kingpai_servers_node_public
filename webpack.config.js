@@ -17,7 +17,7 @@ module.exports = {
                 publicPath: '../'
             })
             },
-            {test: /\.(png|jpg)$/, loader: 'url?limit=8192&name=images/[hash:16].[ext]'},
+            {test: /\.(png|jpg||gif)$/, loader: 'url?limit=4096&name=images/[hash:16].[ext]'},
             {test: /\.html$/, loader: 'html'}
         ]
     },

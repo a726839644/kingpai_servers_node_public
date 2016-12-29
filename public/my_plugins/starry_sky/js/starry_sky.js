@@ -95,16 +95,16 @@
             nowY: this.randomPM() * this.topY,
             // nowX:0,
             // nowY:0,
-            speedX: this.randomPM(),
-            speedY: this.randomPM()
+            speedX: this.randomPM() * 5,
+            speedY: this.randomPM() * 5
         }, options);
     };
 
     StarrySky.prototype.randomPM = function () {
-        var random = Math.random();
-        while (random < 0.1) {
-            random = Math.random();
-        }
+        // var random = Math.random();
+        // while (random < 0.1) {
+        //     random = Math.random();
+        // }
         return Math.random() * (Math.random() > 0.5 ? 1 : -1);
     };
 
