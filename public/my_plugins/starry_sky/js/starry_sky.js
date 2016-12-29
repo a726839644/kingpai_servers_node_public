@@ -36,6 +36,7 @@
 
     StarrySky.DEFAULTS = {
         starColor: '#fefefe',
+        randomColor: true,
         starSize: 2,
         n: 50,
         showFrame: true
@@ -95,16 +96,23 @@
             nowY: this.randomPM() * this.topY,
             // nowX:0,
             // nowY:0,
-            speedX: this.randomPM() * 5,
-            speedY: this.randomPM() * 5
+            speedX: this.randomPM(0.2),
+            speedY: this.randomPM(0.2)
         }, options);
     };
 
-    StarrySky.prototype.randomPM = function () {
-        // var random = Math.random();
-        // while (random < 0.1) {
-        //     random = Math.random();
-        // }
+    StarrySky.prototype.randomPM = function (min, max) {
+        var random = Math.random();
+        if (arguments.length == 1) {
+            while (random < min) {
+                random = Math.random();
+            }
+        }
+        if (arguments.length == 2) {
+            while (random < min || random > max) {
+                random = Math.random();
+            }
+        }
         return Math.random() * (Math.random() > 0.5 ? 1 : -1);
     };
 
@@ -172,7 +180,7 @@
 
     StarrySky.prototype.createStar = function (options) {
         var size = options.starSize || this.options.starSize;
-        var color = options.starColor || this.options.starColor;
+        var color = options.starColor || this.options.randomColor && 'rgb(' + Math.round(Math.random() * 256) + ',' + Math.round(Math.random() * 256) + ',' + Math.round(Math.random() * 256) + ')' || this.options.starColor;
         var ctx = this.ctx;
 
         ctx.shadowColor = color;
