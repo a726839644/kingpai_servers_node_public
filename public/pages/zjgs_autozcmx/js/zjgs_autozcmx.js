@@ -67,7 +67,7 @@
             }
         }
 
-        $selectStatement.on('change',function () {
+        $selectStatement.on('change', function () {
             $textArea.html(codes[$selectStatement.val()]);
         });
 
@@ -78,12 +78,15 @@
          * 该对象有date、qms、ncs成员对象
          */
         function parseStatement(sheet) {
-
+            
             var code = '';
             var a = [];
             for (var i = 1; i < sheet.length; i++) {
                 var o = {};
                 var row = sheet[i];
+                if (row[3] == null) {
+                    continue;
+                }
                 o.zj_fphm = row[3];
                 o.zj_jqsbmc = row[9];
 
@@ -102,7 +105,7 @@
 
                 a.push(o);
             }
-            return '+function(){var c=' + JSON.stringify(a) + ';for(var b=0;b<c.length;b++){if(b>0){zj_add()}a(c[b])}function a(e){var g;var f;var j;var h;var l;var i;var d;g=k("zj_fphm");f=k("zj_jqsbmc");j=k("zj_gmrq");h=k("zj_sbdj");l=k("zj_sbsl");i=k("zj_sbje");d=k("zj_dkse");g.value=e.zj_fphm;f.value=e.zj_jqsbmc;j.value=e.zj_gmrq;h.value=e.zj_sbdj;l.value=e.zj_sbsl;i.value=e.zj_sbje;d.value=e.zj_dkse;g.setAttribute("data-input","yes");f.setAttribute("data-input","yes");j.setAttribute("data-input","yes");h.setAttribute("data-input","yes");l.setAttribute("data-input","yes");i.setAttribute("data-input","yes");d.setAttribute("data-input","yes");d.onchange();function k(n){var o=document.getElementsByName(n);for(var m=0;m<o.length;m++){if(o[m].getAttribute("data-input")!="yes"){return o[m]}}}}}();';
+            return '+function(){var c=' + JSON.stringify(a) + ';var a=0;var i=[];setTimeout(function(){b()},0);function b(){if(a>0){zj_add()}if(a<c.length){a++;h(c[a-1],b)}else{if(i.length>0){alert("请检测"+i.toString()+"列的日期是否错误")}}}function h(g,e){var k;var j;var t;var l;var d;var s;var f;k=u("zj_fphm");j=u("zj_jqsbmc");t=u("zj_gmrq");l=u("zj_sbdj");d=u("zj_sbsl");s=u("zj_sbje");f=u("zj_dkse");k.value=g.zj_fphm;j.value=g.zj_jqsbmc;t.value=g.zj_gmrq;l.value=g.zj_sbdj;d.value=g.zj_sbsl;s.value=g.zj_sbje;f.value=g.zj_dkse;k.setAttribute("data-input","yes");j.setAttribute("data-input","yes");t.setAttribute("data-input","yes");l.setAttribute("data-input","yes");d.setAttribute("data-input","yes");s.setAttribute("data-input","yes");f.setAttribute("data-input","yes");if(g.zj_gmrq.indexOf("NaN")!=-1){i.push(a)}f.onchange();setTimeout(function(){e()},0);function u(o){var m=document.getElementsByName(o);for(var n=0;n<m.length;n++){if(m[n].getAttribute("data-input")!="yes"){return m[n]}}}}}();';
 
             //xlsx的日期单元格转换为日期格式
             function xlsxDateParse(time) {
@@ -112,4 +115,3 @@
     }
 
 }(jQuery);
-
